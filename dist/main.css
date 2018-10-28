@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+  font-size: 20px;
+}
+li:nth-child(2n) {
+  background-color: red;
+}
+#header {
+  width: 10px;
+  height: 20px;
+}
+.detail {
+  color: red;
+  padding: 50px 100px 0;
+}
+.list {
+  text-align: center;
+}
+ul.headerUrl {
+  list-style: none;
+  overflow: hidden;
+  padding: 10px;
+}
+ul.headerUrl li {
+  float: left;
+  width: 24.1%;
+  height: 30px;
+  line-height: 30px;
+  border-left: 1px solid red;
+  margin-right: 10px;
+  text-align: center;
+  background-color: green;
+}
+ul.headerUrl li a {
+  color: #fff;
+  text-decoration: none;
+}
