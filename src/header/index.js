@@ -12,14 +12,17 @@ export default class Header extends React.Component {
             headers: ['主页','javascript', 'css', 'html']
         }
     }
+    static getDerivedStateFromProps(props){
+      console.log('getDerivedStateFromProps',props)
+    }
 
     render() {
 
         return (
-            <ul className="headerUrl">
+            <ul className="headerUrl" >
                      {
-                      this.state.headers.map(function(item,index){
-                        return <li><Link to={`/classify/${index}`}>{item}</Link></li>
+                      this.state.headers.map((item,index)=>{
+                        return <li style={{backgroundColor:this.props.themeColor}}><Link to={`/classify/${index}`}>{item}</Link></li>
                       })
                    }                  
             </ul>
