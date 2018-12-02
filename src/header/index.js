@@ -1,10 +1,12 @@
 import React from 'react';
 import './index.less';
 import {  Link } from 'react-router-dom';
+import { connect, Provider } from 'react-redux';
 
 
 
-export default class Header extends React.Component {
+
+ class HeaderCom extends React.Component {
 
     constructor(props) {
         super(props);
@@ -29,3 +31,15 @@ export default class Header extends React.Component {
         );
     }
 }
+
+
+const mapStateToProps = (state) => {
+  console.log(state,'state=======================')
+    return {
+        count: state.count
+    }
+}
+const Header = connect(
+    mapStateToProps
+)(HeaderCom)
+export default  Header ;
