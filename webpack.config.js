@@ -66,7 +66,7 @@ module.exports  = {
         ]
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
@@ -80,6 +80,7 @@ module.exports  = {
             }
         }),
         extractLESS
-    ]
+    ],
+    mode:"development"
 
 }

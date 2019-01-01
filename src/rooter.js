@@ -12,3 +12,9 @@ ReactDOM.render((
 			<App/>
 		</BrowserRouter>
 	), document.getElementById('app'));
+
+
+console.log("====================================process",process.env.NODE_ENV)
+if(process.env.NODE_ENV=="development"){
+	console.log(module.hot)
+}

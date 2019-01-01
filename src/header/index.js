@@ -11,11 +11,11 @@ import { connect, Provider } from 'react-redux';
     constructor(props) {
         super(props);
         this.state = {
-            headers: ['主页','javascript', 'css', 'html']
+            headers: ['主页','javascript', 'css', 'html','management']
         }
     }
-    static getDerivedStateFromProps(props){
-      console.log('getDerivedStateFromProps',props)
+    static getDerivedStateFromProps(props,state){
+        return null
     }
 
     render() {
@@ -24,7 +24,10 @@ import { connect, Provider } from 'react-redux';
             <ul className="headerUrl" >
                      {
                       this.state.headers.map((item,index)=>{
-                        return <li style={{backgroundColor:this.props.themeColor}}><Link to={`/classify/${index}`}>{item}</Link></li>
+                          if(item=='management'){
+                              return <li style={{backgroundColor:"green"}} key={index}><Link to="/manage">{item}</Link></li>
+                          }
+                        return <li style={{backgroundColor:this.props.themeColor}} key={index}><Link to={`/classify/${index}`}>{item}</Link></li>
                       })
                    }                  
             </ul>
@@ -34,7 +37,6 @@ import { connect, Provider } from 'react-redux';
 
 
 const mapStateToProps = (state) => {
-  console.log(state,'state=======================')
     return {
         count: state.count
     }
