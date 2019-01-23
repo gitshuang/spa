@@ -86,7 +86,7 @@ class Card extends React.Component{
 			connectDropTarget,
 		} = this.props
 		const opacity = isDragging ? 0 : 1
-
+		console.log(isDragging,'isDragging===========================');
 		return connectDragSource(
 			connectDropTarget(<div style={{ ...style, opacity }}>{text}</div>),
 		)

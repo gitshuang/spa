@@ -56,18 +56,25 @@ module.exports  = {
                         // ]
                     },
                     
-                    // {
-
-                    //     test: /\.css$/,
-                    //     use: [ 'style-loader', 'css-loader' ]
-                      
-                    // }
+                    {
+                        test: /\.css$/,
+                        use: ['style-loader', 'css-loader'],
+                      },{
+                        test: /\.scss$/,
+                        use: [
+                            "style-loader", // creates style nodes from JS strings
+                            "css-loader", // translates CSS into CommonJS
+                            "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                        ]
+                    }
 
         ]
     },
     devServer: {
         contentBase: './dist',
     },
+    mode: "development", // 开发模式
+    devtool: "source-map", // 开启调试
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin( {
